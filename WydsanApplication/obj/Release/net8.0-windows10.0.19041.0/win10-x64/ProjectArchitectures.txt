@@ -1,0 +1,1 @@
+C:\CCSharpProjects\MAUI_PROJECTS\WydsanApplication\WydsanApplication\WydsanApplication.csproj;x64

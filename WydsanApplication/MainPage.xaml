@@ -1,0 +1,37 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WydsanApplication.MainPage">
+
+    <StackLayout Padding="20">
+        <Label Text="Выберите тему:" FontSize="24"/>
+        <Picker x:Name="topicPicker" Title="Темы" SelectedIndexChanged="OnTopicSelected">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Сила (F = m * a)</x:String>
+                    <x:String>Энергия (E = m * c^2)</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label Text="Выберите формулу:" FontSize="24" IsVisible="{Binding IsFormulaVisible}"/>
+        <Picker x:Name="formulaPicker" Title="Формулы" IsVisible="{Binding IsFormulaVisible}" SelectedIndexChanged="OnFormulaSelected">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>F = m * a</x:String>
+                    <x:String>E = m * c^2</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label Text="Введите значения:" FontSize="24"/>
+
+        <Entry x:Name="massEntry" Placeholder="m (масса)" Keyboard="Numeric"/>
+        <Entry x:Name="accelerationEntry" Placeholder="a (ускорение)" Keyboard="Numeric"/>
+        <Entry x:Name="forceEntry" Placeholder="F (сила)" Keyboard="Numeric"/>
+
+        <Button Text="Решить" Clicked="OnSolveClicked"/>
+
+        <Label x:Name="resultLabel" FontSize="24"/>
+    </StackLayout>
+
+</ContentPage>
